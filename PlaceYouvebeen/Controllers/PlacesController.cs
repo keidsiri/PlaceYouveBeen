@@ -25,7 +25,13 @@ namespace PlaceYouveBeen.Controllers
         Place myPlaces = new Place(cityName);
         return RedirectToAction("Index");
       }
-    
 
+      [HttpPost("/places/delete")]
+      public ActionResult DeleteAll()
+      {
+        Place.ClearAll();
+        return View();
+      }
+  
     }
 }
